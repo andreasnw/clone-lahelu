@@ -2,16 +2,17 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "jsx": "react-jsx", // Ensure JSX is set to React
+    "noImplicitAny": true, // Helps with strict type-checking
+    "skipLibCheck": true, // Skips type-checking of declaration files
+    "moduleResolution": "node", // Proper resolution of node modules
+    "esModuleInterop": true, // For better compatibility with CommonJS modules
+    "allowSyntheticDefaultImports": true, // Allows default imports for modules without default exports
+    "forceConsistentCasingInFileNames": true, // Ensures consistent file casing
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "exclude": ["node_modules"] // Exclude node_modules from linting/compiling
 }
